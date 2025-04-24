@@ -34,7 +34,7 @@ function About() {
         >
           <Box
             component="img"
-            src="/images/image-about-us.png"
+            src="images/image-about-us.png"
             alt="Tasse en forme de chat"
             sx={{
               maxWidth: '100%',

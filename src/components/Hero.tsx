@@ -75,7 +75,7 @@ function Hero() {
         >
           <Box
             component="img"
-            src="/images/blob.svg"
+            src="images/blob.svg"
             alt=""
             sx={{
               position: 'absolute',
