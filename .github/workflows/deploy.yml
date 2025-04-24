@@ -3,7 +3,6 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -30,6 +29,22 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+
+      - name: Ensure .htaccess exists
+        run: |
+          if [ -f "public/.htaccess" ]; then
+            cp public/.htaccess dist/
+          else
+            echo "# Redirect all routes to index.html for SPA
+            <IfModule mod_rewrite.c>
+              RewriteEngine On
+              RewriteBase /
+              RewriteCond %{REQUEST_FILENAME} !-f
+              RewriteCond %{REQUEST_FILENAME} !-d
+              RewriteCond %{REQUEST_FILENAME} !-l
+              RewriteRule ^ index.html [QSA,L]
+            </IfModule>" > dist/.htaccess
+          fi
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
