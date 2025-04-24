@@ -7,11 +7,11 @@ export default defineConfig({
   base: '/technical-test-front-end-main-material-ui/',
   publicDir: 'public',
   build: {
-    assetsDir: '',
+    assetsDir: 'assets', 
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        assetFileNames: 'assets/[name][extname]' 
       }
     }
-  },
+  }
 })

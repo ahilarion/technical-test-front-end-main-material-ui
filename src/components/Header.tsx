@@ -41,7 +41,7 @@ function Header() {
       <Container maxWidth="xl">
         <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
           <img 
-            src="/images/logo.svg" 
+            src="images/logo.svg"
             alt="Café Neko Logo" 
             style={{ 
               height: isMobile ? '50px' : 'auto',

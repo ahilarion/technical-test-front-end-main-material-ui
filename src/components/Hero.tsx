@@ -86,7 +86,7 @@ function Hero() {
           />
           <Box
             component="img"
-            src="/images/cat-hero-section.png"
+            src="images/cat-hero-section.png"
             alt="Chat avec tasse de café"
             sx={{
               position: 'relative',

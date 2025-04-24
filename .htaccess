@@ -7,6 +7,8 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   
   RewriteRule ^ index.html [QSA,L]
+
+  RewriteRule ^assets/. - [L,NC]
 </IfModule>
 
 <IfModule mod_mime.c>
