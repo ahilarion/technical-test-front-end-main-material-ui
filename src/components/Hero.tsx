@@ -1,6 +1,14 @@
 import { Box, Typography, Button, Container } from '@mui/material';
+import { Link } from 'react-scroll'; 
 
 function Hero() {
+  const scrollLinkProps = {
+    spy: true,
+    smooth: true,
+    offset: -70,
+    duration: 700
+  };
+
   return (
     <Container 
       maxWidth="xl"
@@ -44,6 +52,9 @@ function Hero() {
           </Typography>
           <Button
             variant="contained"
+            component={Link}
+            to="booking-section" 
+            {...scrollLinkProps}
             sx={{
               width: 'fit-content',
               mx: { xs: 'auto', md: 0 },
