@@ -66,6 +66,7 @@ function Contact() {
 
   return (
     <Box
+      id="booking-section"
       sx={{
         width: '100%',
         backgroundColor: '#f8f3e6',

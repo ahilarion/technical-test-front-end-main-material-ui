@@ -21,6 +21,7 @@ function Values() {
 
   return (
     <Box
+      id="values-section"
       sx={{
         width: '100%',
         backgroundColor: '#f8f8f8',

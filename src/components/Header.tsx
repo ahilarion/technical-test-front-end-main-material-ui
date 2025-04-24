@@ -14,6 +14,7 @@ import {
   useMediaQuery,
   useTheme
 } from '@mui/material';  
+import { Link } from 'react-scroll';
 
 function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -22,6 +23,17 @@ function Header() {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleMobileItemClick = () => {
+    setMobileOpen(false);
+  };
+
+  const scrollLinkProps = {
+    spy: true,
+    smooth: true,
+    offset: 0,
+    duration: 700
   };
 
   return (
@@ -39,9 +51,33 @@ function Header() {
     
           {!isMobile && (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
-              <Button variant='text' color="secondary">Qui sommes-nous ?</Button>
-              <Button variant='text' color="secondary">Nos valeurs</Button>
-              <Button variant='text' color="primary">Réservez !</Button>
+              <Button 
+                variant='text' 
+                color="secondary"
+                component={Link}
+                to="about-section"
+                {...scrollLinkProps}
+              >
+                Qui sommes-nous ?
+              </Button>
+              <Button 
+                variant='text' 
+                color="secondary"
+                component={Link}
+                to="values-section"
+                {...scrollLinkProps}
+              >
+                Nos valeurs
+              </Button>
+              <Button 
+                variant='text' 
+                color="primary"
+                component={Link}
+                to="booking-section"
+                {...scrollLinkProps}
+              >
+                Réservez !
+              </Button>
             </Box>
           )}
 
@@ -72,17 +108,32 @@ function Header() {
       >
         <List>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
+            <ListItemButton 
+              component={Link}
+              to="about-section"
+              {...scrollLinkProps}
+              onClick={handleMobileItemClick}
+            >
               <ListItemText primary="Qui sommes-nous ?" sx={{ color: theme.palette.secondary.main }} />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
+            <ListItemButton 
+              component={Link}
+              to="values-section"
+              {...scrollLinkProps}
+              onClick={handleMobileItemClick}
+            >
               <ListItemText primary="Nos valeurs" sx={{ color: theme.palette.secondary.main }} />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleDrawerToggle}>
+            <ListItemButton 
+              component={Link}
+              to="booking-section"
+              {...scrollLinkProps}
+              onClick={handleMobileItemClick}
+            >
               <ListItemText primary="Réservez !" sx={{ color: theme.palette.primary.main }} />
             </ListItemButton>
           </ListItem>

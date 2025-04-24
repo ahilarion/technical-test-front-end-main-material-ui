@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 function About() {
   return (
     <Box
+      id="about-section"
       sx={{
         width: '100%',
         backgroundColor: '#f8f3e6',
